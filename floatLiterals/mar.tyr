@@ -1,0 +1,23 @@
+type T {
+  test "float" {
+    val some_float = 3f
+    val out0 = (some_float + 1f) / 2f;
+    2f == out0
+  }
+  test "double" {
+    val some_float = 3.0
+    val out0 = (some_float + 1.0) / 2.0;
+    // using explicit Float[64] is equally fine
+    2f64 == out0
+  }
+  test "member" {
+    val v = 0.0.cos()
+    1.0 == v
+  }
+  test "member int fp" {
+    // note: show is currently the only function usable here because all other
+    // functions are native. Hence, they cannot be used as pointers
+    val v = 0.show
+    int.show == v
+  }
+}
